@@ -91,6 +91,15 @@ class LList:
                 yield p.elem
             p = p.next
 
+    def rev(self):
+        p = None
+        while self._head is not None:
+            q = self._head
+            self._head = q.next
+            q._next = p
+            p = q
+        self._head = p
+
 
 mlist1 = LList()
 for i in range(10):
