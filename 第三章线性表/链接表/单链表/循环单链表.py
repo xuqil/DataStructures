@@ -1,4 +1,4 @@
-from 第三章线性表.链接表.test3 import LNode
+from 第三章线性表.链接表.单链表.test3 import LNode
 
 
 class LinkedListUnderflow(ValueError):
