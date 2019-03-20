@@ -115,3 +115,25 @@ class LList:
                 p = p.next
             crt.elem = x  # 回填最后一个元素
             crt = crt.next
+
+    def sort(self):
+        p = self._head
+        if p is None or p.next is None:
+            return
+        rem = p.next
+        p.next = None
+        while rem is not None:
+            p = self._head
+            q = None
+            while p is not None and p.elem <= rem.elem:
+                q = p
+                p = p.next
+            if q is None:
+                self._head = rem
+            else:
+                q.next = rem
+            q = rem
+            rem = rem.next
+            q.next = p
+
+
