@@ -1,23 +1,3 @@
-
-def quan(li, m=0):
-    a = len(li)
-    b = m
-    for i in li:
-        b += 1
-        if len(li) == 1:
-            return li
-        if b % 3 == 0:
-            b += 1
-            li.remove(i)
-    print(li)
-    m += a
-    return quan(li, m)
-
-
-# li = list(range(3))
-# quan(li)
-
-
 class ListNode(object):
     def __init__(self, x):
         self.x = x
