@@ -7,7 +7,7 @@ def matching_KMP(t, p, pnext):
         else:
             i = pnext[i]
         if i == m:
-            return j - 1
+            return j - i
         return -1
 
 
@@ -17,10 +17,15 @@ def gen_pnext(p):
     while i < m - 1:  # 生成一个pnext元素值
         if k == -1 or p[i] == p[k]:
             i, k = i + 1, k + 1
-            pnext[i] = k  # 设置pnext元素
+            if p[i] == p[k]:
+                pnext[i] = pnext[k]
+            else:
+                 pnext[i] = k  # 设置pnext元素
         else:
             k = pnext[k]  # 退到更短相同前缀
     return pnext
 
 
 print(gen_pnext("abbcabcaabbcaa"))
+
+print(matching_KMP('nihaoahello', 'hello', gen_pnext('hello')))
