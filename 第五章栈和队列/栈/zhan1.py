@@ -32,10 +32,10 @@ class SStack:
 #     print(st1.pop())
 
 
-st1 = SStack()
-for x in [1, 3, 5, 7, 9]:
-    st1.push(x)
-list2 = []
-while not st1.is_empty():
-    list2.append(st1.pop())
-print(list2)
+# st1 = SStack()
+# for x in [1, 3, 5, 7, 9]:
+#     st1.push(x)
+# list2 = []
+# while not st1.is_empty():
+#     list2.append(st1.pop())
+# print(list2)
