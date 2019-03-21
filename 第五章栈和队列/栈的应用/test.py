@@ -31,6 +31,9 @@ def check_parens(text):
         if pr in open_parens:
             # 将所有的开括号入栈
             st.push(pr)
+        elif st.is_empty() and pr in parens:
+            # 闭括号多于开括号的情况
+            print("Unmatching is found at", i, "for", pr)
         elif st.pop() != opposite[pr]:
             # 将开括号出栈，与闭口号对于字典的值（闭括号对应的开括号）相比较
             print("Unmatching is found at", i, "for", pr)
@@ -39,4 +42,4 @@ def check_parens(text):
 
 
 if __name__ == '__main__':
-    print(check_parens("(ddddd{ddds)"))
+    print(check_parens("(ddddd{ddds}))"))
