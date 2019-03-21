@@ -13,7 +13,7 @@ def check_parens(text):
     def parentheses(text):
         """
         括号生成器，每次调用返回text里的下一括号及其位置
-        每次调用生成开括号的及其位置如test[1]=(
+        每次调用生成括号的及其位置如test[1]=(
         :param text: 包含括号的字符串，被检测字符串
         :return:
         """
