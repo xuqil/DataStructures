@@ -5,7 +5,7 @@ def postfixEval(postfixExpr):
     operandStack = Stack()
     tokenList = postfixExpr.split()
     for token in tokenList:
-        if token in "0123456789":
+        if token.isdigit():
             operandStack.push(int(token))
         else:
             operand2 = operandStack.pop()
@@ -29,4 +29,4 @@ def doMath(op, op1, op2):
         return op1 - op2
 
 
-print(postfixEval('1 2 * 3 2 * +'))
+print(postfixEval('1 2 * 32 2 * +'))
