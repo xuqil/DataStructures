@@ -18,8 +18,7 @@ def hot_potato(namelist, num):
             if i == num - 1:
                 simqueue.dequeue()
                 continue
-            a = simqueue.dequeue()
-            simqueue.enqueue(a)
+            simqueue.enqueue(simqueue.dequeue())
     return simqueue.dequeue()
 
 
