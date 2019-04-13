@@ -39,7 +39,9 @@ class UnorderedList:
         previous = None
         found = False
         while not found:
-            if current.get_data() == item:
+            if current is None:  # 当item不存在时返回False
+                return False
+            elif current.get_data() == item:
                 found = True
             else:
                 previous = current
@@ -49,6 +51,7 @@ class UnorderedList:
             self.head = current.get_next()
         else:
             previous.set_next(current.get_next())
+        return True
 
 
 mylist = UnorderedList()
@@ -60,5 +63,5 @@ mylist.add(26)
 mylist.add(54)
 print(mylist.search(17))
 print(mylist.size())
-mylist.remove(54)
+mylist.remove(4)
 print(mylist.size())
